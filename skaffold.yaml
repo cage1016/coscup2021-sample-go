@@ -1,0 +1,14 @@
+apiVersion: skaffold/v2beta18
+kind: Config
+build:
+  artifacts:
+  - image: ghcr.io/cage1016/coscup2021-tw-sample-go
+    buildpacks:
+      builder: gcr.io/buildpacks/builder:v1
+      dependencies:
+        paths:
+        - hello.go
+  tagPolicy:
+    sha256: {}
+  local:
+    push: true
