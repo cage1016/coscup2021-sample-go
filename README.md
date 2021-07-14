@@ -45,6 +45,22 @@
 [![Run on Google Cloud](https://deploy.cloud.run/button.svg)](https://deploy.cloud.run)
 
 
+### Build Cloud Function by pack
+
+1. build container image by pack & gcr.io/buildpacks/builder:v1 builder
+    ```bash
+    # You could change container image as you want
+    pack build hello-coscup-2021-tw-get --builder gcr.io/buildpacks/builder:v1 --env GOOGLE_FUNCTION_TARGET=HelloCocsup2021tw -p functions
+    ```
+1. run container image locally
+    ```bash
+    docker run --rm -p 8080:8080 hello-coscup-2021-tw-get
+    ```
+2. curl hello-coscup-2021-tw-get
+    ```bash
+    curl localhost:8080
+    ```
+
 ## Show your support
 
 Give a ⭐️ if this project helped you!
